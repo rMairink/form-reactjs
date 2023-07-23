@@ -14,16 +14,10 @@ const Form = () => {
     e.preventDefault();
 
     if (name === "" || email === "" || message === "") {
-      setMessageValidation("Preencha o Formulário Corretamente");
-      document.querySelector(".textValidation").style.display = 'flex'
-      document.querySelector(".textValidation").classList.remove("success");
-      document.querySelector(".textValidation").classList.add("error");
+      setMessageValidation("Preencha os Campos");
       return;
     } else {
       setMessageValidation("Formulário Enviado");
-      document.querySelector(".textValidation").style.display = 'flex'
-      document.querySelector(".textValidation").classList.remove("error");
-      document.querySelector(".textValidation").classList.add("success");
     }
 
     const templateParams = {
@@ -49,7 +43,13 @@ const Form = () => {
     <form onSubmit={formValidation} className="form">
       <h1>Envie-nos um E-mail</h1>
 
-      <div className="textValidation">{messageValidation}</div>
+      {messageValidation === "Preencha os Campos" && (
+        <p className="error">{messageValidation}</p>
+      )}
+      {messageValidation === "Formulário Enviado" && (
+        <p className="success">{messageValidation}</p>
+      )}
+
       <div className="inputField">
         <input
           type="text"

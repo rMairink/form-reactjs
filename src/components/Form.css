@@ -1,9 +1,9 @@
-.form{
+.form {
     width: 100%;
     max-width: 500px;
     height: auto;
     background-color: #162c3888;
-    padding: 40px 35px ;
+    padding: 40px 35px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,13 +13,13 @@
     border-radius: 3px;
 }
 
-.form h1{
+.form h1 {
     text-transform: uppercase;
     margin: 20px 0;
 }
 
-.form .textValidation{
-    display: none;
+.error {
+    display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -28,52 +28,57 @@
     font-size: 28px;
     text-transform: uppercase;
     border-radius: 3px;
+    background-color: #e00206b3;
 }
 
-.error {
-    background-color: #e002069f;
-}
-
-.success{
-
+.success {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    color: #ffffff;
+    font-size: 28px;
+    text-transform: uppercase;
+    border-radius: 3px;
     background-color: #00ad82;
 }
 
 
-.inputField{
+.inputField {
     width: 100%;
-    height: 45px;
+    height: 50px;
 }
 
-.inputField input{
+.inputField input {
     width: 100%;
     height: 100%;
     outline: none;
     border-radius: 3px;
     border: 1px solid #485b66;
     padding: 0 10px;
-    font-size: 24px;
+    font-size: 22px;
 }
 
-.inputFieldTextArea{
+.inputFieldTextArea {
     width: 100%;
 }
 
-.inputFieldTextArea textarea{
+.inputFieldTextArea textarea {
     width: 100%;
-    height: 100px;
+    height: 180px;
     resize: none;
     outline: none;
     border-radius: 3px;
     padding: 5px 10px;
     border: 1px solid #485b66;
-    font-size: 24px;
+    font-size: 22px;
 
 }
 
-.form input[type="submit"]{
+.form input[type="submit"] {
     width: 100%;
-    height: 40px;
+    height: 50px;
     font-size: 24px;
     background: none;
     outline: none;
@@ -85,38 +90,40 @@
     text-transform: uppercase;
 }
 
-@media screen and (max-width: 580px){
-    .form{
-       max-width: 345px;;
+@media screen and (max-width: 580px) {
+    .form {
+        max-width: 345px;
+        ;
     }
 
-    .form h1{
+    .form h1 {
         font-size: 28px;
     }
 
-    .form .textValidation{
+    .error, .success{
         font-size: 20px;
     }
 
-}
 
-.inputField input{
-    width: 100%;
-    height: 100%;
-    outline: none;
-    border-radius: 3px;
-    border: 1px solid #485b66;
-    padding: 0 10px;
-    font-size: 18px;
-}
 
-.inputFieldTextArea textarea{
-    width: 100%;
-    height: 100px;
-    resize: none;
-    outline: none;
-    border-radius: 3px;
-    padding: 5px 10px;
-    border: 1px solid #485b66;
-    font-size: 18px;
+    .inputField input {
+        width: 100%;
+        height: 100%;
+        outline: none;
+        border-radius: 3px;
+        border: 1px solid #485b66;
+        padding: 0 10px;
+        font-size: 18px;
+    }
+
+    .inputFieldTextArea textarea {
+        width: 100%;
+        height: 100px;
+        resize: none;
+        outline: none;
+        border-radius: 3px;
+        padding: 5px 10px;
+        border: 1px solid #485b66;
+        font-size: 18px;
+    }
 }
