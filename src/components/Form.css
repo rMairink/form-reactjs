@@ -1,7 +1,7 @@
 .form{
     width: 100%;
     max-width: 500px;
-    height: 500px;
+    height: auto;
     background-color: #162c3888;
     padding: 40px 35px ;
     display: flex;

@@ -8,22 +8,22 @@ const Form = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [messageValidation, setMessageValidation] = useState("");
 
   const formValidation = (e) => {
     e.preventDefault();
-    if (name === "" || email === "" || message === "") {
-      const textValidation = document.querySelector(".textValidation");
-      textValidation.style.display = "flex";
-      textValidation.classList.add("error");
-      textValidation.textContent = "Preencha os Dados Corretamente";
-      return;
 
+    if (name === "" || email === "" || message === "") {
+      setMessageValidation("Preencha o Formulário Corretamente");
+      document.querySelector(".textValidation").style.display = 'flex'
+      document.querySelector(".textValidation").classList.remove("success");
+      document.querySelector(".textValidation").classList.add("error");
+      return;
     } else {
-      const textValidation = document.querySelector(".textValidation");
-      textValidation.style.display = "flex";
-      textValidation.classList.remove("error");
-      textValidation.classList.add("success");
-      textValidation.textContent = "Formulário enviado!";
+      setMessageValidation("Formulário Enviado");
+      document.querySelector(".textValidation").style.display = 'flex'
+      document.querySelector(".textValidation").classList.remove("error");
+      document.querySelector(".textValidation").classList.add("success");
     }
 
     const templateParams = {
@@ -49,7 +49,7 @@ const Form = () => {
     <form onSubmit={formValidation} className="form">
       <h1>Envie-nos um E-mail</h1>
 
-      <div className="textValidation"></div>
+      <div className="textValidation">{messageValidation}</div>
       <div className="inputField">
         <input
           type="text"
